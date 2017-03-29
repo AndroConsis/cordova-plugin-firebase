@@ -327,6 +327,7 @@ public class FirebasePlugin extends CordovaPlugin {
             public void run() {
                 try {
                     FirebaseMessaging.getInstance().unsubscribeFromTopic(topic);
+                    FirebaseMessaging.getInstance().deleteInstanceID();
                     callbackContext.success();
                 } catch (Exception e) {
                     callbackContext.error(e.getMessage());
